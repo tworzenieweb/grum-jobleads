@@ -3,6 +3,12 @@ parameters:
     git_dir: "."
     tasks:
         git_conflict: ~
+        git_commit_message:
+          matchers:
+              Must contain JIRA issue number: /(JL-\d+)|(\[BLACKOPS|STYLE|MAINTENANCE\])\:/
+          case_insensitive: false
+          multiline: false
+          additional_modifiers: ''
         phpcs:
           standard: PSR2
           ignore_patterns:

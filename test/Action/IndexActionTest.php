@@ -13,10 +13,14 @@ class IndexActionTest extends TestCase
 {
     private $action;
 
+    const FULL_NAME = 'Adamczewski Luke';
+
+
+
     protected function setUp()
     {
         $user = $this->getUser();
-        $user->__toString()->willReturn('Adamczewski Luke');
+        $user->__toString()->willReturn(self::FULL_NAME);
 
         $this->action = new IndexAction($user->reveal());
     }

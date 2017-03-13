@@ -7,24 +7,39 @@ class User
     private $name;
     private $lastname;
 
-    public function __construct(string $name, string $lastname)
+
+
+    public function __construct($name, $lastname)
     {
         $this->name = $name;
         $this->lastname = $lastname;
     }
 
-    public function getName(): string
+
+
+    public function getName()
     {
         return $this->name;
     }
 
-    public function getLastname(): string
+
+
+    public function getLastname()
     {
         return $this->lastname;
     }
 
-    public function __toString()
+
+
+    public function getFullName()
     {
         return $this->lastname . ' ' . $this->name;
+    }
+
+
+
+    public function __toString()
+    {
+        return $this->getFullName();
     }
 }
